@@ -1,7 +1,7 @@
 {
-  "name": "flaggy-helpers",
-  "version": "1.0.18",
-  "description": "Helper functions for Flaggy",
+  "name": "flaggish",
+  "version": "1.0.0",
+  "description": "Helper functions for Flaggish",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

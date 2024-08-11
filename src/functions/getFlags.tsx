@@ -7,7 +7,7 @@ type GetFlagsProps = {
 };
 
 const getFlags = async ({ clientApiKey, secretApiKey }: GetFlagsProps) => {
-  const request = await fetch('https://flaggy-ten.vercel.app/api/getFlags', {
+  const request = await fetch('https://flaggish.vercel.app/api/getFlags', {
     cache: 'no-store',
     method: 'POST',
     body: JSON.stringify({

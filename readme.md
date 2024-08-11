@@ -1,3 +1,3 @@
-# Flaggy Helpers
+# Flaggish
 
-Helper functions for Flaggy
+Helper functions for Flaggish

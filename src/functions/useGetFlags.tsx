@@ -1,4 +1,4 @@
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Flag } from '@/types/Flag';
 import { mapFlagResponse } from '@/utils/mapFlagResponse';
@@ -19,7 +19,7 @@ const useGetFlags = ({ clientApiKey, secretApiKey }: useGetFlagsProps) => {
         setIsLoading(true);
 
         const response = await fetch(
-          'https://flaggy-ten.vercel.app/api/getFlags',
+          'https://flaggish.vercel.app/api/getFlags',
           {
             cache: 'no-store',
             method: 'POST',
