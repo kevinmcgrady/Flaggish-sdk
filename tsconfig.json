@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    "rootDir": "src",
     "target": "es5",
+    "types": ["node"],
     "module": "esnext",
     "lib": ["es2015", "DOM"],
     "jsx": "react",
@@ -14,9 +16,6 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationDir": "types",
-    "emitDeclarationOnly": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "emitDeclarationOnly": true
   }
 }

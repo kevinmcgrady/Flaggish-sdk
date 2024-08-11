@@ -1,4 +1,4 @@
-import { Flag } from '@/types/Flag';
+import { Flag } from '../types/Flag';
 
 const mapFlagResponse = (flags: Flag[]) => {
   const flagMap = flags.map((flag) => {

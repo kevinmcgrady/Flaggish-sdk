@@ -1,14 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { Flag } from '@/types/Flag';
-import { mapFlagResponse } from '@/utils/mapFlagResponse';
+import { Flag } from '../types/Flag';
+import { mapFlagResponse } from '../utils/mapFlagResponse';
 
-type useGetFlagsProps = {
-  clientApiKey: string;
-  secretApiKey: string;
-};
-
-const useGetFlags = ({ clientApiKey, secretApiKey }: useGetFlagsProps) => {
+const useGetFlags = () => {
   const [flags, setFlags] = useState<Flag[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasError, setHasError] = useState<boolean>(false);
@@ -24,8 +19,11 @@ const useGetFlags = ({ clientApiKey, secretApiKey }: useGetFlagsProps) => {
             cache: 'no-store',
             method: 'POST',
             body: JSON.stringify({
-              clientApiKey,
-              secretApiKey,
+              clientApiKey: process.env
+                .NEXT_PUBLIC_FLAGGISH_CLIENT_API_KEY as string,
+              secretApiKey: process.env
+                .NEXT_PUBLIC_FLAGGISH_SECRET_API_KEY as string,
+              env: process.env.NODE_ENV?.toUpperCase(),
             }),
           },
         );

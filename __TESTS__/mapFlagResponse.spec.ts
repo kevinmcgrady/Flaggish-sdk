@@ -1,7 +1,7 @@
-import { describe, expect,it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
-import { Flag } from '@/types/Flag';
-import { mapFlagResponse } from '@/utils/mapFlagResponse';
+import { Flag } from '../src/types/Flag';
+import { mapFlagResponse } from '../src/utils/mapFlagResponse';
 
 const flags: Flag[] = [
   {
