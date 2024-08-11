@@ -5,7 +5,12 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+  {
+    files: [
+      '**/*.{js,mjs,cjs,ts,jsx,tsx}',
+      '**/*.spec.{js,mjs,cjs,ts,jsx,tsx}',
+    ],
+  },
   { ignores: ['dist'] },
   { languageOptions: { globals: globals.browser } },
   {
