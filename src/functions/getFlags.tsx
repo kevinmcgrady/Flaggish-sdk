@@ -1,5 +1,5 @@
-import { Flag } from '../types/Flag';
-import { mapFlagResponse } from '../utils/mapFlagResponse';
+import { Flag } from '@/types/Flag';
+import { mapFlagResponse } from '@/utils/mapFlagResponse';
 
 const getFlags = async () => {
   if (
@@ -11,8 +11,8 @@ const getFlags = async () => {
   }
 
   const request = await fetch('https://flaggish.vercel.app/api/getFlags', {
-    cache: 'no-store',
     method: 'POST',
+    cache: 'no-store',
     body: JSON.stringify({
       clientApiKey: process.env.NEXT_PUBLIC_FLAGGISH_CLIENT_API_KEY as string,
       secretApiKey: process.env.NEXT_PUBLIC_FLAGGISH_SECRET_API_KEY as string,

@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { Flag } from '../types/Flag';
-import { mapFlagResponse } from '../utils/mapFlagResponse';
+import { mapFlagResponse } from '@/utils/mapFlagResponse';
 
 const useGetFlags = () => {
-  const [flags, setFlags] = useState<Flag[] | null>(null);
+  const [flags, setFlags] = useState(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasError, setHasError] = useState<boolean>(false);
 
@@ -16,8 +15,8 @@ const useGetFlags = () => {
         const response = await fetch(
           'https://flaggish.vercel.app/api/getFlags',
           {
-            cache: 'no-store',
             method: 'POST',
+            cache: 'no-store',
             body: JSON.stringify({
               clientApiKey: process.env
                 .NEXT_PUBLIC_FLAGGISH_CLIENT_API_KEY as string,
@@ -28,7 +27,7 @@ const useGetFlags = () => {
           },
         );
 
-        const flags = (await response.json()) as Flag[];
+        const flags = await response.json();
         const mapFlags = mapFlagResponse(flags);
 
         setFlags(mapFlags);
